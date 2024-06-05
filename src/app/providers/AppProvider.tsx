@@ -5,10 +5,10 @@ import store from '../store/AppStore';
 
 
 
-export const AppProvider:FC = () => {
+export const AppProvider: FC = () => {
   return (
     <Provider store={store}>
-        <AppRouter />
+      <AppRouter />
     </Provider>
   )
 }
