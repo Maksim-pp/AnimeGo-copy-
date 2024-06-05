@@ -1,0 +1,1 @@
+export { LinkMainPage } from './ui/LinkMainPage'

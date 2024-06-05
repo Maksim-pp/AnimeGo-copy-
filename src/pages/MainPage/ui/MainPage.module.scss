@@ -1,3 +1,8 @@
+.page {
+    background-color: rgb(var(--background-page));
+}
+
 .main {
-    
+    display: flex;
+    flex-direction: column;
 }

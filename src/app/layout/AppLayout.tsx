@@ -7,7 +7,7 @@ export const AppLayout: FC = () => {
   return (
     <div>
       <TheHeader />
-      <main className='container'>
+      <main>
         <Outlet />
       </main>
       <TheFooter />
