@@ -188,3 +188,62 @@ export const cartManga = [
         description: '— И на меня тоже обрати внимание. — Э? Что? Она меня сейчас по-русски как-то обозвала? — хотелось бы мне сказать, но всё не так...Серебреволосая Алиса, сидящая возле моей парты, горделиво улыбнулась... Однако я прекрасно понял, что она мне сказала. На самом деле я могу свободно понимать русскую речь. Но Алиса об этом совсем не знает. Получается, что теперь она каждый день будет кокетничать со мной по-русски?!',
     },
 ]
+
+export const characters = [
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+    {
+        img: 'https://animego.org/upload/character/6666ef6220f90630074443.jpg',
+        title: 'Алиса Михайловна Кудзё',
+    },
+]

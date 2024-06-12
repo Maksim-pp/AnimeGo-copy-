@@ -24,7 +24,10 @@ export const Preview: FC<IProps> = ({ description, img, name, rate, tag, title }
                     <div className={styles.previewRating__text}>{rate}</div>
                 </div>
                 <NavLink to={''}>
-                    <img src={img} alt="Баннер" className={styles.preview__img} />
+                    <div>
+                        <img src={img} alt="Баннер" className={styles.preview__img} />
+                    </div>
+                    
                 </NavLink>
             </div>
             <div className={styles.previewInfo}>

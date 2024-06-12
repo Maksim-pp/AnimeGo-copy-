@@ -25,7 +25,6 @@ export const SlidePreview:FC<IProps> = ({img, rate, title}) => {
         <NavLink to={''}>
             <h2 className={styles.slide__title}>{title}</h2>
         </NavLink>
-        
     </div>
   )
 }

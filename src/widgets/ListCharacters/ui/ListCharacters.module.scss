@@ -1,0 +1,20 @@
+.list {
+    max-width:100%;
+    background-color: rgb(var(--color-light));
+    border: 1px solid rgba(var(--color-border), 0.5);
+    &__title{
+        padding: 16px;
+        font-size: 40px;
+    }
+    &__subtitle{
+        padding: 16px;
+    }
+    &Preview{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: baseline;
+        gap: 30px;
+    }
+}
