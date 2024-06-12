@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 export const LinkMainPage: FC = () => {
     return (
-        <ul className={styles.menu}>
+        <ul className={`${styles.menu} container`}>
             <li className={styles.menu__item}>
                 <NavLink to={''} className={styles.link}>
                     Онгоинги

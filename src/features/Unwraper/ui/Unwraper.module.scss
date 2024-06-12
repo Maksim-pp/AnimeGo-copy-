@@ -1,0 +1,31 @@
+.unwraper{
+    max-width: 400px;
+    width: 378px;
+    &Title {
+        background-color: rgba(var(--color-border), 0.5);
+        border-bottom: 1px solid rgb(var(--color-border-unwraper));
+        padding: 12px;
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        &__text {
+            font-weight: var(--font-w-bold);
+            font-size: var(--font-s-title-default);
+        }
+    }
+}
+.button{
+    font-size: var(--font-s-title-default);
+    color: rgb(var(--color-primary));
+    &:hover{
+        opacity: 0.8;
+        border-bottom: 1px dashed rgba(var(--color-primary));
+    }
+}
+
+.popup{
+    max-height: 500px;
+    overflow-y: scroll;
+    transition: all 2s ease-in;
+}

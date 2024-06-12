@@ -1,0 +1,36 @@
+.slide {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &Rating{
+        margin-top: 20px;
+        margin-left: -5px;
+        padding: 4px 10px;
+        background-color: rgb(var(--color-rating));
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 5px;
+        
+        &__text {
+            font-size: var(--font-s-text-large);
+            font-weight: var(--font-w-bold);
+        }
+    }
+    &__img {
+        max-width: 100%;
+    }
+    &__title {
+        color: rgb(var(--color-primary));
+        font-size: var(--font-s-title-large);
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,6 +1,8 @@
+import { FC } from 'react'
+
 import styles from './Logo.module.scss'
 
-export const Logo = () => {
+export const Logo:FC = () => {
   return (
     <div className={styles.logo}>AnimeGoCopy</div>
   )

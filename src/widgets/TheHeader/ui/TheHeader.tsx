@@ -1,11 +1,10 @@
 import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Routes } from 'shared/constants'
-import { Logo } from 'shared/ui/Logo'
-
+import { Logo } from 'shared/index'
+import { NavMenu, NavMenuUser } from 'widgets/NavMenu'
 
 import styles from './TheHeader.module.scss'
-import { NavMenu, NavMenuUser } from 'widgets/NavMenu'
 
 // прописать всем NavLink
 
@@ -15,7 +14,7 @@ export const TheHeader: FC = () => {
       <div className={styles.header}>
         <div className={`${styles.headerNav} container`}>
           <NavLink to={Routes.MAIN_PAGE}>
-            <Logo />
+            <Logo/>
           </NavLink>
           <div className={styles.nav}>
             <NavMenu />

@@ -1,0 +1,16 @@
+.list {
+    max-width:100%;
+    background-color: rgb(var(--color-light));
+    border: 1px solid rgba(var(--color-border), 0.5);
+    &__title{
+        border-bottom: 1px solid rgba(var(--color-border), 0.5);
+        padding: 16px;
+        font-size: 40px;
+    }
+    &Preview{
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}

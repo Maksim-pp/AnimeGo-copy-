@@ -2,19 +2,20 @@ import Friends from 'shared/assets/icons/users-people.svg'
 import Notifications from 'shared/assets/icons/notifications.svg'
 import Chat from 'shared/assets/icons/chat.svg'
 import Loop from 'shared/assets/icons/loop.svg'
+import { Routes } from 'shared/constants';
 
 export const navListMenu = [
     { 
         link: "Аниме",
-        path: ''
+        path: Routes.ANIME
     },
     { 
         link: "Манга",
-        path: '' 
+        path: Routes.MANGA 
     },
     { 
         link: "Персонажи",
-        path: '' 
+        path: Routes.CHARACTERS 
     },
     { 
         link: "Случайное аниме",
@@ -23,8 +24,8 @@ export const navListMenu = [
 ];
 
 export const  user = {
-        link: 'user name',
-        path: ''
+    link: 'user name',
+    path: ''
 }
 
 export const navListUser = [

@@ -1,0 +1,28 @@
+.list {
+    max-width: 400px;
+    width: 378px;
+    background-color: rgb(var(--color-light-gray));
+    &Title{
+        border-top: 1px solid rgba(var(--color-border), 0.5);
+        border-left: 1px solid rgba(var(--color-border), 0.5);
+        border-right: 1px solid rgba(var(--color-border), 0.5);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 12px;
+        &__text{
+            font-size: 22px;
+            font-weight: var(--font-w-bold);
+            color: rgba(var(--background-navigation));
+        }
+        &__link {
+            color: rgb(var(--color-primary));
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    
+}

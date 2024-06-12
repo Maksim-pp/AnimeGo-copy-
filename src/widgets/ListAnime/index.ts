@@ -1,0 +1,1 @@
+export { ListAnime } from './ui/ListAnime'

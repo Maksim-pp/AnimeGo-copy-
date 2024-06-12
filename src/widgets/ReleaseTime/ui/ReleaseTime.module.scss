@@ -1,0 +1,17 @@
+.release {
+    max-width: 400px;
+    width: 378px;
+    background-color: rgb(var(--color-light-gray));
+    &__title{
+        padding: 12px;
+        border: 1px solid rgba(var(--color-border), 0.5);
+        font-size: 22px;
+        font-weight: var(--font-w-bold);
+        color: rgba(var(--background-navigation));
+        & span {
+            font-size: var(--font-s-text-small);
+            font-weight: var(--font-w-default);
+            color: rgb(var(--color-gray));
+        }
+    }
+}

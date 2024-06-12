@@ -1,0 +1,18 @@
+.slider{
+    margin-top: -30px;
+    background-color: rgb(var(--background-slider));
+    padding: 26px;
+    border-top: 1px solid rgb(var(--color-border));
+    border-bottom: 1px solid rgb(var(--color-border));
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.title {
+    font-size: 32px;
+    color: rgb(var(--background-navigation));
+}
+
+.slider:hover .title {
+    text-decoration: underline;
+}

@@ -1,0 +1,12 @@
+.update {
+    max-width: 400px;
+    width: 378px;
+    background-color: rgb(var(--color-light-gray));
+    &__title{
+        padding: 12px;
+        border: 1px solid rgba(var(--color-border), 0.5);
+        font-size: 22px;
+        font-weight: var(--font-w-bold);
+        color: rgba(var(--background-navigation));
+    }
+}
