@@ -1,0 +1,9 @@
+.manga {
+    background-color: rgb(var(--background-page));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

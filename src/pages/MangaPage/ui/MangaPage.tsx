@@ -1,9 +1,12 @@
 import  { FC } from 'react'
+import { ListManga } from 'widgets/ListManga'
 
 import style from './MangaPage.module.scss'
 
 export const MangaPage:FC = () => {
   return (
-    <div>MangaPage</div>
+    <div className={style.manga}>
+      <ListManga />
+    </div>
   )
 }

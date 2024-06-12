@@ -1,0 +1,1 @@
+export { ListManga } from './ui/ListManga'

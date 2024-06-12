@@ -1,18 +1,18 @@
 import { FC } from 'react'
-import { cartAnime } from 'entities/Cart/constants'
 import { Preview } from 'entities/Cart'
+import { cartManga } from 'entities/Cart/constants'
 
-import styles from './ListAnime.module.scss'
+import styles from './ListManga.module.scss'
 
-export const ListAnime:FC = () => {
+export const ListManga:FC = () => {
   return (
     <div className={`${styles.list} container`}>
         <div className={styles.list__title}>
-            Список аниме
+            Манга
         </div>
         <div className={styles.listPreview}>
             {
-                cartAnime.map(el => (
+                cartManga.map(el => (
                     <Preview description={el.description} img={el.img} name={el.name} rate={el.rate} tag={el.tag} title={el.title} key={Date.now()}/>
                 ))
             }
