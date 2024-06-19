@@ -1,0 +1,1 @@
+export { CharacterInSeries } from './ui/CharacterInSeries'

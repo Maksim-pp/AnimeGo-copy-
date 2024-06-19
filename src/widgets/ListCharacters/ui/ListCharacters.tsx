@@ -17,7 +17,22 @@ export const ListCharacters: FC = () => {
             <div className={styles.listPreview}>
                 {
                     characters.map(el => (
-                        <CharactersPreview img={el.img} title={el.title} key={Date.now()} />
+                        <CharactersPreview 
+                        key={Date.now()} 
+                        img_serial={el.img_serial}
+                        img={el.img} 
+                        title={el.title} 
+                        subtitle={el.subtitle}
+                        description={el.description}
+                        actor_age={el.actor_age}
+                        actor_img={el.actor_img}
+                        actor_name={el.actor_name}
+                        rate={el.rate}
+                        role={el.role}
+                        serial_title={el.serial_title}
+                        serial_title_eng={el.serial_title_eng}
+                        tag={el.tag}
+                        />
                     ))
                 }
             </div>

@@ -5,6 +5,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 30px;
+    padding: 20px;
     &Rating{
         margin-top: 20px;
         margin-left: -5px;
@@ -15,29 +16,30 @@
         flex-direction: row;
         align-items: baseline;
         gap: 5px;
-        &__text {
+        &__text{
             font-size: var(--font-s-text-large);
             font-weight: var(--font-w-bold);
         }
     }
-    &__img {
-        max-width: 150px;
+    &__img{
+        max-width: 250px;
+        max-height: 350px;
     }
     &Info{
-        display: flex; 
+        display: flex;
         flex-direction: column;
         gap: 10px;
-        &__title {
+        &__text{
+            font-size: var(--font-s-text-small);
+            color: rgb(var(--color-border));
+        }
+        &__title{
             color: rgb(var(--color-primary));
             font-size: var(--font-s-title-large);
             width: 100%;
             &:hover{
                 text-decoration: underline;
             }
-        }
-        &__name{
-            font-size: var(--font-s-title-small);
-            color: rgb(var(--color-gray));
         }
         &__tag{
             display: flex;
@@ -52,13 +54,21 @@
                 }
             }
         }
-        &__description{
-            max-width: 600px;
-            -webkit-line-clamp: 5; 
-            display: -webkit-box; 
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+        &__actor{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+            &Img{
+                max-height: 100px;
+            }
+            &Title{
+                color: rgb(var(--color-primary));
+                &:hover{
+                    text-decoration: underline;
+                    }
+            }
         }
     }
-    
 }
