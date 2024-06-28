@@ -22,14 +22,3 @@ export const MangaItemPage: FC = () => {
         </div>
     )
 }
-
-const arr1 = [166.5, 947, 557, 130, 222.5, 223.9];
-const arr2 = [0, 90, 0, 90, 180, 270];
-1
-const p2 = 223.9;
-const deg = 270; 
-
-const corX = Math.round(Math.cos(deg) * p2);
-const corY = Math.round(Math.sin(deg) * p2);
-
-console.log( corX, corY)
