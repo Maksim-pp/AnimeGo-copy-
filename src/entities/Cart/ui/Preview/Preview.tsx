@@ -13,9 +13,10 @@ interface IProps {
     name: string,
     tag: string[],
     description: string,
+    path: string | undefined,
 }
 
-export const Preview: FC<IProps> = ({ description, img, name, rate, tag, title }) => {
+export const Preview: FC<IProps> = ({ description, img, name, rate, tag, title, path}) => {
     return (
         <div className={styles.preview}>
             <div>
@@ -23,7 +24,14 @@ export const Preview: FC<IProps> = ({ description, img, name, rate, tag, title }
                     <img src={Star} alt="Рейтинг" />
                     <div className={styles.previewRating__text}>{rate}</div>
                 </div>
-                <NavLink to={''}>
+                <NavLink to={path + title} state={{
+                    description: description,
+                    img: img,
+                    name: name,
+                    rate: rate,
+                    tag: tag,
+                    title: title,
+                }}>
                     <div>
                         <img src={img} alt="Баннер" className={styles.preview__img} />
                     </div>
@@ -32,7 +40,14 @@ export const Preview: FC<IProps> = ({ description, img, name, rate, tag, title }
             </div>
             <div className={styles.previewInfo}>
                 <div className={styles.previewInfo__title}>
-                    <NavLink to={''}>
+                    <NavLink to={path + title} state={{
+                    description: description,
+                    img: img,
+                    name: name,
+                    rate: rate,
+                    tag: tag,
+                    title: title,
+                }}>
                         {title}
                     </NavLink>
                 </div>

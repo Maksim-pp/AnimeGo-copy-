@@ -1,0 +1,20 @@
+.message{
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    &__title {
+        font-size: 24px;
+    }
+}
+
+.button{
+    padding: 8px 14px;
+    background-color: rgba(var(--color-border-unwraper), 0.5);
+    border: 1px solid rgb(var(--color-border));
+    border-radius: 2px;
+    &:hover{
+        background-color: rgba(var(--color-border-unwraper), 0.7);
+    }
+}

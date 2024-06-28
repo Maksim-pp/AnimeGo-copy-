@@ -13,7 +13,16 @@ export const ListManga:FC = () => {
         <div className={styles.listPreview}>
             {
                 cartManga.map(el => (
-                    <Preview description={el.description} img={el.img} name={el.name} rate={el.rate} tag={el.tag} title={el.title} key={Date.now()}/>
+                    <Preview 
+                        key={Date.now()} 
+                        description={el.description} 
+                        img={el.img} 
+                        name={el.name} 
+                        rate={el.rate} 
+                        tag={el.tag} 
+                        title={el.title} 
+                        path={el.path} 
+                    />
                 ))
             }
         </div>

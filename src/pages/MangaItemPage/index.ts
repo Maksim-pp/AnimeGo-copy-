@@ -1,0 +1,1 @@
+export { MangaItemPage } from './ui/MangaItemPage'

@@ -15,7 +15,7 @@ export const NavMenuUser: FC = () => {
                 </li>
                 {
                     navListUser.map(el => (
-                        <li className={styles.nav__item}>
+                        <li className={styles.nav__item} key={el.link}>
                             <NavLink to={el.path}>
                                 <img src={el.link} alt="" />
                             </NavLink>

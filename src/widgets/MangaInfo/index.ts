@@ -1,0 +1,1 @@
+export { MangaInfo } from './ui/MangaInfo'
