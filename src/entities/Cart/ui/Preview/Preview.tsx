@@ -13,7 +13,7 @@ interface IProps {
     name: string,
     tag: string[],
     description: string,
-    path: string | undefined,
+    path?: string | undefined,
 }
 
 export const Preview: FC<IProps> = ({ description, img, name, rate, tag, title, path}) => {

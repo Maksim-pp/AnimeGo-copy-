@@ -1,11 +1,11 @@
 import { FC, useState } from 'react'
 import { MyButton } from 'shared/index'
 
-import styles from './Unwraper.module.scss'
 import { SeriesUpdateCard } from 'entities/Cart'
 import { cartSeries } from 'entities/Cart/constants/cartSeries'
 import { useSpring } from 'react-spring'
 
+import styles from './Unwraper.module.scss'
 //добавить пропсы по API
 
 interface IProps {

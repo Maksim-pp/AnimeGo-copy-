@@ -16,7 +16,7 @@ export const ErrorPage: FC = () => {
         </Link> или свяжитесь с администрацией сайта.
       </p>
       <div>
-        <img src={Img} alt="404 error img" className={styles.error__img} />
+        <img src={Img} alt="404" className={styles.error__img} />
       </div>
     </div>
   )
