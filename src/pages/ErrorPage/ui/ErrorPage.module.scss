@@ -1,0 +1,35 @@
+
+.error{
+    max-width: 100%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    &__404{
+        font-size: 75px;
+        color: rgb(var(--color-primary));
+        font-weight: var(--font-w-bold);
+    }
+    &__title{
+        font-size: 40px;
+        font-weight: var(--font-w-bold);
+    }
+    &__text{
+        max-width: 600px;
+        line-height: 1.8;
+        text-align: center;
+        color: rgb(var(--color-border));
+        font-size: var(--font-s-text-large);
+    }
+    &__link{
+        color: rgb(var(--color-primary));
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &__img{
+        max-width: 300px;
+    }
+}

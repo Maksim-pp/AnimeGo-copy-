@@ -7,6 +7,7 @@ import { CharacterPage } from 'pages/CharacterPage'
 import { CharactersPage } from 'pages/CharactersPage'
 import { MangaPage } from 'pages/MangaPage'
 import { MangaItemPage } from 'pages/MangaItemPage'
+import { ErrorPage } from 'pages/ErrorPage'
 import { AppLayout } from 'app/layout'
 
 
@@ -15,7 +16,7 @@ export const AppRouter = () => {
     
 
     const routes = createRoutesFromElements(
-        <Route path={Routes.MAIN_PAGE} element={<AppLayout />} errorElement={'error'}>
+        <Route path={Routes.MAIN_PAGE} element={<AppLayout />} errorElement={<ErrorPage />}>
             <Route index element={<MainPage />} />
             <Route path={Routes.ANIME} element={<AnimePage />} />
             <Route path={Routes.MANGA} element={<MangaPage />} />
