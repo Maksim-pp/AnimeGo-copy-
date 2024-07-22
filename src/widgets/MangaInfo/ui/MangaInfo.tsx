@@ -9,11 +9,9 @@ interface IProps {
     rate: string,
     title: string,
     name: string,
-    tag: string[],
-    description: string,
 }
 
-export const MangaInfo: FC<IProps> = ({img, name, rate, tag, title, description}) => {
+export const MangaInfo: FC<IProps> = ({img, name, rate,  title}) => {
 
     return (
         <div className={`${styles.manga} container`}>
@@ -21,9 +19,7 @@ export const MangaInfo: FC<IProps> = ({img, name, rate, tag, title, description}
                 img={img}
                 name={name}
                 rate={rate}
-                tag={tag}
                 title={title}
-                description={description}
             />
             <Related />
         </div>

@@ -6,7 +6,7 @@ import { NavMenu, NavMenuUser } from 'widgets/NavMenu'
 
 import styles from './TheHeader.module.scss'
 
-// прописать всем NavLink
+
 
 export const TheHeader: FC = () => {
   return (

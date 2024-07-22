@@ -14,8 +14,8 @@ export const navListMenu = [
         path: Routes.MANGA 
     },
     { 
-        link: "Персонажи",
-        path: Routes.CHARACTERS 
+        link: "Случайный персонаж",
+        path: Routes.CHARACTER
     },
     { 
         link: "Случайное аниме",

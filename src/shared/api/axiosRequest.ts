@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export const axiosRequest = axios.create({
-    baseURL: 'https://animego.org/'
+    baseURL: 'https://shikimori.one/api/'
 })

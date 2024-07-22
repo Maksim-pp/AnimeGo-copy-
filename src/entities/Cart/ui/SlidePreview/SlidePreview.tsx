@@ -7,20 +7,20 @@ import styles from './SlidePreview.module.scss'
 
 //с пропсами временное решение, изменить потом при добавлении API
 interface IProps {
-    rate: string,
+    score: number | string,
     img: string,
     title: string,
 }
 
-export const SlidePreview:FC<IProps> = ({img, rate, title}) => {
+export const SlidePreview:FC<IProps> = ({img, score, title}) => {
   return (
     <div className={styles.slide}>
         <div className={styles.slideRating}>
             <img src={Star} alt="Рейтинг" />
-            <div className={styles.slideRating__text}>{rate}</div>
+            <div className={styles.slideRating__text}>{score}</div>
         </div>
         <NavLink to={''}>
-            <img src={img} alt="Баннер" className={styles.slide__img} />
+            <img src={`https://shikimori.one/${img}`} alt="Баннер" className={styles.slide__img} />
         </NavLink>
         <NavLink to={''}>
             <h2 className={styles.slide__title}>{title}</h2>

@@ -12,7 +12,7 @@ export const ListNewAnime: FC = () => {
         <div className='container'>
             <div className={styles.list}>
                 <div className={styles.list__title}>
-                    Расписание аниме
+                    Новое аниме на сайте
                 </div>
                 <div className={styles.listPreview}>
                     {

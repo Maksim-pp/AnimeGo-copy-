@@ -22,6 +22,7 @@
     }
     &__img {
         max-width: 150px;
+        height: 210px;
     }
     &Info{
         display: flex; 
@@ -41,23 +42,19 @@
         }
         &__tag{
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             flex-wrap: wrap;
-            gap: 10px;
-            &Item{
-                text-decoration: underline;
-                &:hover{
-                    color: rgb(var(--color-primary));
-                    text-decoration: none;
-                }
+            font-size: var(--font-s-text-small);
+            gap: 5px;
+            &_gray{
+                color: rgb(var(--color-gray));
             }
-        }
-        &__description{
-            max-width: 600px;
-            -webkit-line-clamp: 5; 
-            display: -webkit-box; 
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            &Item{
+                background-color: rgb(var(--color-primary));
+                color: rgb(var(--color-light));
+                padding: 2px;
+                font-size: var(--font-s-text-default);
+            }
         }
     }
     

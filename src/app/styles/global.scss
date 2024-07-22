@@ -33,6 +33,15 @@ body {
     justify-content: center;
 }
 
+.error {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(var(--color-primary))
+}
+
 .container {
     width: 100%;
     max-width: 1340px;

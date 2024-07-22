@@ -6,6 +6,7 @@
     align-items: flex-start;
     gap: 30px;
     padding: 20px;
+    width: 100%;
     &Rating{
         margin-top: 20px;
         margin-left: -5px;
@@ -57,11 +58,10 @@
         &__actor{
             display: flex;
             flex-direction: row;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 10px;
+            gap: 5px;
             &Img{
                 max-height: 100px;
+                width: 50px;
             }
             &Title{
                 color: rgb(var(--color-primary));
@@ -71,4 +71,11 @@
             }
         }
     }
+}
+.seyu{
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

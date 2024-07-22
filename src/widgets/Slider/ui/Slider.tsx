@@ -1,14 +1,18 @@
-import { FC } from 'react'
+import { FC} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { NavLink } from 'react-router-dom';
-import { cartSlidePreview } from 'entities/Cart/constants';
+import { Preloader } from 'shared/index';
 import { SlidePreview } from 'entities/Cart';
 
 import styles from './Slider.module.scss'
 import 'swiper/scss';
+import { useAppSelector } from 'app/store/AppStore';
 
 const breakpoints = {
     320: {
+        slidesPerView: 1,
+    },
+    425: {
         slidesPerView: 2,
     },
     768: {
@@ -23,11 +27,21 @@ const breakpoints = {
 };
 
 export const Slider: FC = () => {
+    let { Error, animeSeason, isLoading} = useAppSelector(state => state.AnimeSeason)
+    
+    if (isLoading)
+        return (
+            <section className='preloader'>
+                <Preloader />
+            </section>
+        );
+    if (Error) return <section className='error'>Ивините! Произошла ошибка</section>;
+
     return (
         <div className={styles.slider}>
             <h1 className={`${styles.title} container`}>
                 <NavLink to={''}>
-                    Аниме "этого" сезона
+                    Сейчас на экранах
                 </NavLink>
             </h1>
             <Swiper
@@ -39,9 +53,9 @@ export const Slider: FC = () => {
                 className='container'
             >
                 {
-                    cartSlidePreview.map(el => (
+                    animeSeason.map(el => (
                         <SwiperSlide>
-                            <SlidePreview key={el.title} img={el.img} rate={el.rate} title={el.title} />
+                            <SlidePreview key={el.id} img={el.image.original} score={el.score} title={el.name}/>
                         </SwiperSlide>
                     ))
                 }

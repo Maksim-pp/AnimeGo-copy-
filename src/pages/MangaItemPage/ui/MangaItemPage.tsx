@@ -7,18 +7,26 @@ import styles from './MangaItemPage.module.scss'
 
 export const MangaItemPage: FC = () => {
     const location = useLocation()
-    const { img, name, tag, title, rate, description } = location.state
+    const { id,
+        name,
+        russian,
+        image,
+        url,
+        kind,
+        score,
+        status,
+        volumes,
+        released_on,
+        chapters, } = location.state
     return (
         <div className={styles.manga}>
             <MangaInfo 
-                img={img}
+                img={image}
                 name={name}
-                rate={rate}
-                tag={tag}
-                title={title}
-                description={description}
+                rate={score}
+                title={name}
             />
-            <Review title={title}/>
+            <Review title={russian}/>
         </div>
     )
 }

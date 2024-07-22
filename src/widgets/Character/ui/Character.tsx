@@ -1,36 +1,42 @@
-import  { FC } from 'react'
-import { useLocation } from 'react-router-dom'
+import { FC } from 'react'
 
 import styles from './Character.module.scss'
+import { Preloader } from 'shared/index'
+import { ICharacter } from 'shared/types/characterType'
 
-export const Character:FC = () => {
-    const location = useLocation()
-    const { img, title, subtitle, description} = location.state
-
-    
-    const getDescription = ()=> {
-        if(description.length == 0) {
-        return <div>Нет Описания</div>
-    } else {
-        return <div className={styles.characterInfo__description}>{description}</div>
-    }
+interface IProps {
+    Character: ICharacter,
 }
 
-  return (
-    <div className={`${styles.character} container`}>
-        <img src={img} alt="" className={styles.character__img}/>
-        <div className={styles.characterInfo}>
-            <div className={styles.characterInfo__title}>
-                {title}
-                <div className={styles.characterInfo__subtitle}>
-                    {subtitle}
+export const Characters: FC<IProps> = ({ Character }) => {
+
+    
+    const getDescription = () => {
+        if (Character.description.length == 0) {
+            return <div>Нет Описания</div>
+        } else {
+            return <div className={styles.characterInfo__description}>{Character.description}</div>
+        }
+    }
+
+    return (
+        <div className={`${styles.character} container`}>
+            <img src={`https://shikimori.one/${Character.image.original}`} alt="" className={styles.character__img} />
+            <div className={styles.characterInfo}>
+                <div className={styles.characterInfo__title}>
+                    {Character.russian}
+                    <div className={styles.characterInfo__subtitle}>
+                        {Character.name}
+                    </div>
+                    <div className={styles.characterInfo__subtitle}>
+                        {Character.japanese}
+                    </div>
                 </div>
+                <div className={styles.characterInfo__titleDescription}>
+                    Описание
+                </div>
+                {getDescription()}
             </div>
-            <div className={styles.characterInfo__titleDescription}>
-                Описание
-            </div>
-            { getDescription() }
         </div>
-    </div>
-  )
+    )
 }

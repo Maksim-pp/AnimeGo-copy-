@@ -8,11 +8,9 @@ interface IProps {
     rate: string,
     title: string,
     name: string,
-    tag: string[],
-    description: string,
 }
 
-export const MangaPreview: FC<IProps> = ({img, name, rate, tag, title, description}) => {
+export const MangaPreview: FC<IProps> = ({img, name, rate, title, }) => {
     const [isShow, setIsShow] = useState(false)
     const classes = isShow ? `${styles.preview__description} ${styles.active}` : styles.preview__description
 
@@ -39,17 +37,17 @@ export const MangaPreview: FC<IProps> = ({img, name, rate, tag, title, descripti
                         <div className={styles.previewInfo__subtitle}>Авторы</div>
                         <div className={styles.previewInfo__subtitle}>Главные герои</div>
                     </div>
-                    {
+                    {/* {
                         tag.map(el => (
                             <div key={el} className={styles}>
                                 {el}
                             </div>
                         ))
-                    }
+                    } */}
                 </div>
             </div>
             <div className={classes}>
-                {description}
+                {/* {description} */}
             </div>
             {isShow 
                 ? <MyButton clickHandler={changeHandler} className={styles.button}>Свернуть</MyButton> 

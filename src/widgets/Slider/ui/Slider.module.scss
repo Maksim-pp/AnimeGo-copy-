@@ -16,3 +16,10 @@
 .slider:hover .title {
     text-decoration: underline;
 }
+
+.error {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
