@@ -4,7 +4,7 @@ import styles from './ReviewMessage.module.scss'
 import { MyButton } from 'shared/index'
 
 interface IProps {
-    title: string
+  title: string
 }
 
 export const ReviewMessage:FC<IProps> = ({title}) => {

@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import styles from './Character.module.scss'
-import { Preloader } from 'shared/index'
 import { ICharacter } from 'shared/types/characterType'
 
 interface IProps {
@@ -9,15 +8,6 @@ interface IProps {
 }
 
 export const Characters: FC<IProps> = ({ Character }) => {
-
-    
-    const getDescription = () => {
-        if (Character.description.length == 0) {
-            return <div>Нет Описания</div>
-        } else {
-            return <div className={styles.characterInfo__description}>{Character.description}</div>
-        }
-    }
 
     return (
         <div className={`${styles.character} container`}>
@@ -35,7 +25,6 @@ export const Characters: FC<IProps> = ({ Character }) => {
                 <div className={styles.characterInfo__titleDescription}>
                     Описание
                 </div>
-                {getDescription()}
             </div>
         </div>
     )

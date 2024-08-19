@@ -1,0 +1,22 @@
+.role{
+    max-width: 100%;
+    &__title{
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        font-size: 26px;
+        border-bottom: 1px solid rgba(var(--color-border));
+    }
+    &__list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+.subtitle {
+    color: rgb(var(--color-primary));
+    font-size: var(--font-s-text-large);
+    &:hover{
+        text-decoration: underline;
+    }
+}

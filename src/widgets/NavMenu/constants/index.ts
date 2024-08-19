@@ -1,1 +1,1 @@
-export {navListMenu, navListUser, user} from './navListMenu'
+export { navListUser, user} from './navListMenu'

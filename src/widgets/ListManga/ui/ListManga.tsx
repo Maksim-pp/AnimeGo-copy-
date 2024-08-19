@@ -8,7 +8,7 @@ import { Preloader } from 'shared/index'
 import { Routes } from 'shared/constants'
 
 export const ListManga: FC = () => {
-    const { Error, isLoading, mangas } = useAppSelector(state => state.Mangas)
+    const { error, isLoading, mangas } = useAppSelector(state => state.Mangas)
 
 
     if (isLoading) {
@@ -18,7 +18,7 @@ export const ListManga: FC = () => {
             </section>
         )
     }
-    if (Error) { return <section className='error'>Ивините! Произошла ошибка</section> }
+    if (error) { return <section className='error'>Ивините! Произошла ошибка</section> }
 
     return (
         <div className={`${styles.list} container`}>
@@ -29,19 +29,40 @@ export const ListManga: FC = () => {
                 {
                     mangas.map(el => (
                         <Preview
-                            key={el.id}
+                            id={el.id}
                             image={el.image.original}
                             name={el.name}
-                            score={el.score}
                             russian={el.russian}
-                            id={el.id}
                             kind={el.kind}
-                            released_on={el.released_on}
+                            key={el.id}
+                            aired_on={el.aired_on}
+                            score={el.score}
                             status={el.status}
                             url={el.url}
-                            volumes={el.volumes}
-                            aired_on = {el.aired_on}
                             path={Routes.MANGA}
+
+                            volumes={el.volumes}
+                            chapters={el.chapters}
+                            released_on={el.released_on}
+                            english={el.english}
+                            japanese={el.japanese}
+                            synonyms={el.synonyms}
+                            license_name_ru={el.license_name_ru}
+                            description={el.description}
+                            description_html={el.description_html}
+                            description_source={el.description_source}
+                            franchise={el.franchise}
+                            favoured={el.favoured}
+                            anons={el.anons}
+                            ongoing={el.ongoing}
+                            thread_id={el.thread_id}
+                            topic_id={el.topic_id}
+                            myanimelist_id={el.myanimelist_id}
+                            rates_scores_stats={el.rates_scores_stats}
+                            rates_statuses_stats={el.rates_statuses_stats}
+                            licensors={el.licensors}
+                            genres={el.genres}
+                            publishers={el.publishers}
                         />
                     ))
                 }

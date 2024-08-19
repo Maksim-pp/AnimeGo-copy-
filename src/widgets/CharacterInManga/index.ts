@@ -1,0 +1,1 @@
+export {CharacterInManga} from './ui/CharacterInManga'

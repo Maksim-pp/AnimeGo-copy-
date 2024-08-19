@@ -1,14 +1,17 @@
-import { AppDispatch } from 'app/store/AppStore';
 import { axiosRequest } from "shared/api";
-import { IMangas } from "shared/types/mangasType";
-import MangasListSlice from './MangasListSlice';
+import { IManga } from 'shared/types/mangaType';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchMangasList = async (dispatch: AppDispatch) => {
-    try {
-        dispatch(MangasListSlice.MangasFetching())
-        const response = await axiosRequest.get<IMangas[]>('mangas/?limit=50')
-        dispatch(MangasListSlice.MangasFetchingSuccess(response.data))
-    } catch (error) {
-        dispatch(MangasListSlice.MangasFetchingError('ошибка'))
+
+export const fetchMangasList = createAsyncThunk<IManga[], undefined, { rejectValue: string }>(
+    'mangaList/fetchMangasList', async (_, { rejectWithValue }) => {
+        try{
+            const response = await axiosRequest.get(`mangas/?limit=50/`);
+            const data = response.data
+            return data
+        } catch {
+            return rejectWithValue('Ошибка при попытке получить список Манги')
+        }
+
     }
-}
+)

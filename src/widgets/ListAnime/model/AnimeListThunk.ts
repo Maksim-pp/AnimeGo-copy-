@@ -1,14 +1,16 @@
-import { AppDispatch } from 'app/store/AppStore';
-import AnimeListSlice from './AnimeListSlice';
 import { axiosRequest } from 'shared/api';
-import { IAnimes } from 'shared/types/animesType';
+import { IAnime } from 'shared/types/animeType';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchAnimeList = async (dispatch: AppDispatch) =>{
-    try {
-        dispatch(AnimeListSlice.AnimeFetching())
-        const response = await axiosRequest.get<IAnimes[]>('animes/?limit=50');
-        dispatch(AnimeListSlice.AnimeFetchingSuccess(response.data));
-    } catch {
-        dispatch(AnimeListSlice.AnimeFetchingError('ошибка'))
+
+export const fetchAnimeList = createAsyncThunk<IAnime[], undefined, { rejectValue: string }>(
+    'animeList/fetchAnimeList', async ( _, {rejectWithValue} ) => {
+        try{
+            const response = await axiosRequest.get('animes/?limit=50');
+            const data = await response.data;
+            return data
+        } catch(error) {
+            return rejectWithValue('Ошибка при попытке получить список Аниме')
+        }
     }
-}
+)

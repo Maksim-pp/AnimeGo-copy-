@@ -1,25 +1,23 @@
-export interface IAnime {
+export interface IManga{
     id: number,
     name: string,
     russian: string,
-    image: IImage
+    image: IImage,
     url: string,
     kind: string,
     score: string,
     status: string,
-    episodes: number,
-    episodes_aired: number,
+    volumes: number,
+    chapters: number,
     aired_on: string,
     released_on: string,
-    rating: string,
     english: [],
     japanese: [],
     synonyms: [],
     license_name_ru: string,
-    duration: number,
     description: string,
     description_html:string,
-    description_source:string,
+    description_source: string,
     franchise: string,
     favoured: boolean,
     anons: boolean,
@@ -29,16 +27,11 @@ export interface IAnime {
     myanimelist_id: number,
     rates_scores_stats: IRatesScoresStats[],
     rates_statuses_stats: IRatesStatusesStats[],
-    updated_at: string,
-    next_episode_at: string,
-    fansubbers: [],
-    fandubbers: [],
     licensors: [],
     genres: IGenres[],
-    studios: IStudios[],
-    videos: IVideos[],
-    screenshots: IScreenshots[],
+    publishers: IPublishers[]
 }
+
 export interface IImage {
     original: string,
     preview: string,
@@ -64,25 +57,7 @@ export interface IGenres {
     entry_type: string
 }
 
-export interface IStudios {
+export interface IPublishers {
     id: number,
     name: string,
-    filtered_name: string,
-    real: boolean,
-    image: string
-}
-
-export interface IVideos {
-    id: number,
-    url: string,
-    image_url: string,
-    player_url: string,
-    name: string,
-    kind: string,
-    hosting: string,
-}
-
-export interface IScreenshots{
-    orignal: string,
-    preview: string,
 }

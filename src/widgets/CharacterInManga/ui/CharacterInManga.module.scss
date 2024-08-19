@@ -1,0 +1,14 @@
+.series{
+    max-width:100%;
+    background-color: rgb(var(--color-light));
+    border: 1px solid rgba(var(--color-border), 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    &__title{
+        padding-top: 20px;
+        font-size: 32px;
+        font-weight: var(--font-w-bold);
+        color: rgb(var(--background-navigation));
+    }
+}

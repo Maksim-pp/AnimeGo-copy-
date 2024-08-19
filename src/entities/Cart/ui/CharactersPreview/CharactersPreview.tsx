@@ -24,7 +24,7 @@ export const CharactersPreview:FC<IProps> = ({img, title, subtitle, description,
   return (
     <div className={styles.characters}>
         <NavLink 
-            to={`${Routes.CHARACTERS}` + title} 
+            to={`${Routes.CHARACTER}` + title} 
             state={{
                 img: img,
                 title: title,
@@ -46,7 +46,7 @@ export const CharactersPreview:FC<IProps> = ({img, title, subtitle, description,
             </div>
         </NavLink>
         <NavLink 
-            to={`${Routes.CHARACTERS}` + title} 
+            to={`${Routes.CHARACTER}` + title} 
             state={{
                 img: img,
                 title: title,

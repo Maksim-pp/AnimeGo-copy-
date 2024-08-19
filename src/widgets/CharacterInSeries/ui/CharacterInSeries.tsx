@@ -17,7 +17,6 @@ export const CharacterInSeries: FC<IProps> = ({ Character }) => {
       </div>
       <CharactersSeriesPreview
         Character={Character}
-        key={Character.id}
       />
     </div>
   )

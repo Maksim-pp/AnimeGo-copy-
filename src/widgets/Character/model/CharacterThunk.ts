@@ -1,15 +1,17 @@
-import { AppDispatch } from "app/store/AppStore";
-import CharacterSlice from "./CharacterSlice";
 import { axiosRequest } from "shared/api";
 import { ICharacter } from "shared/types/characterType";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 
-export const fetchCharacter = async (dispatch: AppDispatch) => {
-    try{
-        dispatch(CharacterSlice.fetchCharacter());
-        const response = await axiosRequest.get<ICharacter>(`characters/${7}`)
-        dispatch(CharacterSlice.fetchCharacterSuccess(response.data))
-    }catch{
-        dispatch(CharacterSlice.fetchCharacterError('ошибка'))
+export const fetchCharacter = createAsyncThunk<ICharacter, number, {rejectValue: string}>(
+    'character/fetchCharacter', async (id, {rejectWithValue}) => {
+        try {
+            const response = await axiosRequest.get(`characters/${id}`)
+            const data = response.data
+            
+            return data
+        } catch {
+            return rejectWithValue('Ошибка при попытке получить Персонажа')
+        }
     }
-}
+)

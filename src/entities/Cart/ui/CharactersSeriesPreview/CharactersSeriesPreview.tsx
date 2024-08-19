@@ -16,7 +16,7 @@ export const CharactersSeriesPreview: FC<IProps> = ({ Character, }) => {
         <div>
             {
                 Character.animes.map((el) => (
-                    <div className={styles.preview}>
+                    <div className={styles.preview} key={el.id}>
                         <div>
                             <div className={styles.previewRating}>
                                 <img src={Star} alt="Рейтинг" />
@@ -37,7 +37,6 @@ export const CharactersSeriesPreview: FC<IProps> = ({ Character, }) => {
                             <div className={styles.previewInfo__text}>
                                 {el.role}
                             </div>
-
                             <div className={styles.previewInfo__text}>
                                 {el.name}
                             </div>
@@ -45,7 +44,7 @@ export const CharactersSeriesPreview: FC<IProps> = ({ Character, }) => {
                                 {
                                     Character.seyu.map((el) => (
 
-                                        <div>
+                                        <div key={el.id}>
                                             <div className={styles.previewInfo__text}>
                                                 Сэйю
                                             </div>
