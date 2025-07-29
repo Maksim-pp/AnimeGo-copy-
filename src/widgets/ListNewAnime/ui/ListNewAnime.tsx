@@ -8,6 +8,9 @@ import { Preview } from 'entities/Cart'
 import styles from './ListNewAnime.module.scss'
 
 export const ListNewAnime: FC = () => {
+
+    
+
     return (
         <div className='container'>
             <div className={styles.list}>

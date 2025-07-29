@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IMangaRelated } from "shared/types/mangaRelatedType";
-import { fetchMangaRelated } from "./MangaRelatedThunk";
+import { fetchAnimeRelated } from "./AnimeRelatedThunk";
 
 interface IState {
-    mangaRelated: IMangaRelated[],
+    animeRelated: IMangaRelated[],
     isLoading: boolean,
     error: string,
 }
 
 const initialState:IState = {
-    mangaRelated: [
+    animeRelated: [
         {
             relation: "",
             relation_russian: "",
@@ -57,25 +57,25 @@ const initialState:IState = {
     error: '',
 }
 
-const mangaRelatedSlice = createSlice({
+const animeRelatedSlice = createSlice({
     name: 'RealatedSlice',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
         builder
-        .addCase(fetchMangaRelated.pending, (state)=>{
+        .addCase(fetchAnimeRelated.pending, (state)=>{
             state.isLoading = true;
         })
-        .addCase(fetchMangaRelated.fulfilled, (state, {payload})=> {
+        .addCase(fetchAnimeRelated.fulfilled, (state, {payload})=> {
             state.isLoading = false;
-            state.mangaRelated = payload
+            state.animeRelated = payload
         })
-        .addCase(fetchMangaRelated.rejected, (state, {payload})=> {
+        .addCase(fetchAnimeRelated.rejected, (state, {payload})=> {
             state.isLoading = false;
             if(payload) state.error = payload
         })
     }
 })
 
-export default mangaRelatedSlice.actions
-export const mangaRelatedReducer = mangaRelatedSlice.reducer
+export default animeRelatedSlice.actions
+export const animeRelatedReducer = animeRelatedSlice.reducer

@@ -1,0 +1,1 @@
+export {AnimeItemPage} from './ui/AnimeItemPage'

@@ -1,12 +1,12 @@
 import { FC } from 'react'
-
-import styles from './Related.module.scss'
 import { IMangaRelated } from 'shared/types/mangaRelatedType'
 
-// изменить тип на оператор или "|"
+import styles from './Related.module.scss'
+import { IAnimeRelated } from 'shared/types/animeRelatedType'
+
 
 interface IProps {
-  Related: IMangaRelated[] ,
+  Related?: IMangaRelated[] | IAnimeRelated[],
 }
 
 export const Related: FC<IProps> = ({Related}) => {
@@ -15,7 +15,7 @@ export const Related: FC<IProps> = ({Related}) => {
       <h2 className={styles.related__title}>Связаное</h2>
       <div className={styles.related__list}>
         {
-          Related.map(el => (
+          Related?.map(el => (
             <div className={styles.item}>
               <div className={styles.itemInfo}>
                 {

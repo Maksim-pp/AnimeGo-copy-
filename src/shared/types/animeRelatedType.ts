@@ -1,4 +1,4 @@
-export interface IMangaRelated {
+export interface IAnimeRelated {
     relation: string,
     relation_russian: string,
     anime: IAnime | null,

@@ -1,13 +1,25 @@
 import { FC } from 'react'
 import { Preloader } from 'shared/index'
 import { Preview } from 'entities/Cart'
-import { useAppSelector } from 'app/store/AppStore'
+import { useAppDispatch, useAppSelector } from 'app/store/AppStore'
 
 import styles from './ListAnime.module.scss'
 import { Routes } from 'shared/constants'
+import { Pagination } from 'widgets/Pagination'
+import AnimeListSlice from '../model/AnimeListSlice'
 
 export const ListAnime: FC = () => {
-  const { animes, error, isLoading} = useAppSelector(state => state.Animes)
+  const { page, animes, error, isLoading,} = useAppSelector(state => state.Animes)
+  const {next, prev} = AnimeListSlice
+
+  const dispatch = useAppDispatch()
+
+  const Next =()=> {
+    return dispatch(next())
+  }
+  const Prev = () => {
+    return dispatch(prev())
+  }
   
   if (isLoading) {
     return (
@@ -74,6 +86,7 @@ export const ListAnime: FC = () => {
           ))
         }
       </div>
+      <Pagination page={page} next={Next} prev={Prev}/>
     </div>
   )
 }

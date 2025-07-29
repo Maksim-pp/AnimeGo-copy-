@@ -83,6 +83,6 @@ export interface IVideos {
 }
 
 export interface IScreenshots{
-    orignal: string,
+    original: string,
     preview: string,
 }

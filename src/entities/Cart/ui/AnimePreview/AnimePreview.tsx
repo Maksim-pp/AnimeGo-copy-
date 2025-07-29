@@ -1,15 +1,17 @@
 import { FC, useState } from 'react'
-import { IManga, } from 'shared/types/mangaType'
 import { MyButton } from 'shared/index'
+import { IAnime } from 'shared/types/animeType'
 import Star from 'shared/assets/icons/star.svg'
 
-import styles from './MangaPreview.module.scss'
+import styles from './AnimePreview.module.scss'
+
 
 interface IProps {
-    manga: IManga
+    anime: IAnime
 }
 
-export const MangaPreview: FC<IProps> = ({ manga }) => {
+export const AnimePreview: FC<IProps> = ({anime}) => {
+
     const [isShow, setIsShow] = useState(false)
     const classes = isShow ? `${styles.preview__description} ${styles.active}` : styles.preview__description
 
@@ -19,41 +21,43 @@ export const MangaPreview: FC<IProps> = ({ manga }) => {
 
     return (
         <div className={styles.preview}>
-            <img src={`https://shikimori.one/${manga.image.original}`} alt="" className={styles.preview__img} />
+            <img src={`https://shikimori.one/${anime.image.original}`} alt="" className={styles.preview__img}  />
             <div className={styles.previewInfo}>
                 <div className={styles.score}>
                     <img src={Star} alt="" />
-                    {manga.score}
+                    {anime.score}
                 </div>
                 <div className={styles.previewInfo__title}>
-                    {manga.russian}
+                    {anime.russian}
                 </div>
                 <div className={styles.previewInfo__subtitle}>
-                    {manga.name}
+                    {anime.name}
                 </div>
                 <div className={styles.previewInfo__subtitle}>
-                    {manga.english}
+                    {anime.english}
                 </div>
                 <div className={styles.previewInfo__subtitle}>
-                    {manga.japanese}
+                    {anime.japanese}
                 </div>
                 <div className={styles.previewInfo__subtitle}>
-                    {manga.synonyms}
+                    {anime.synonyms}
                 </div>
                 <div className={styles.previewInfo__block}>
                     <div className={styles.previewInfo__blockDescription}>
-                        <div className={styles.previewInfo__subtitle}>Тип: <span>{manga.kind}</span></div>
-                        <div className={styles.previewInfo__subtitle}>Статус: <span>{manga.status}</span></div>
-                        <div className={styles.previewInfo__subtitle}>Выпуск: <span>с {manga.aired_on} по {manga.released_on}</span></div>
-                        <div className={styles.previewInfo__subtitle}>Тома и Главы: <span>{manga.volumes} томов, {manga.chapters} глав</span></div>
-                        <div className={styles.previewInfo__subtitle}>Анонс: {manga.anons ? <span>Да</span> : <span>Нет</span>}</div>
-                        <div className={styles.previewInfo__subtitle}>Выходит: {manga.ongoing ? <span>Да</span> : <span>Нет</span>}</div>
-                        <div className={styles.previewInfo__subtitle}>Жанры: <span className={styles.genres}>{manga.genres.map((el) => (
+                        <div className={styles.previewInfo__subtitle}>Тип: <span> {anime.kind}</span></div>
+                        <div className={styles.previewInfo__subtitle}>Статус: <span>{anime.status}</span></div>
+                        <div className={styles.previewInfo__subtitle}>Выпуск: <span>с {anime.aired_on} по {anime.released_on}</span></div>
+                        <div className={styles.previewInfo__subtitle}>Эпизоды: <span> {anime.episodes_aired}/{anime.episodes} </span></div>
+                        <div className={styles.previewInfo__subtitle}>Анонс: {anime.anons ? <span>Да</span> : <span>Нет</span>}</div>
+                        <div className={styles.previewInfo__subtitle}>Выходит: {anime.ongoing ? <span>Да</span> : <span>Нет</span>} </div>
+                        <div className={styles.previewInfo__subtitle}>Рейтинг: {anime.rating} </div>
+
+                        <div className={styles.previewInfo__subtitle}>Жанры: <span className={styles.genres}> {anime.genres.map((el) => (
                             <div>{el.name},</div>
                         ))}</span></div>
-                        <div className={styles.previewInfo__subtitle}>Студия: <span>{manga.publishers.map((el) => (
+                        <div className={styles.previewInfo__subtitle}>Студия: <span> {anime.studios.map((el) => (
                             <div>
-                                {el.name}
+                                <img src={`https://shikimori.one/${el.image}`} alt={el.name} className={styles.studios}/>
                             </div>
                         ))}</span></div>
                     </div>
@@ -61,13 +65,13 @@ export const MangaPreview: FC<IProps> = ({ manga }) => {
 
                         <div >
                             <div className={styles.previewInfo__subtitle}>Оценки людей</div>
-                            {manga.rates_scores_stats.map((el) => (
+                            {anime.rates_scores_stats.map((el) => (
                                 <div><img src={Star} alt="" /> {el.name} : <span>{el.value}</span> </div>
                             ))}
                         </div>
-                        <div >
+                        <div>
                             <div className={styles.previewInfo__subtitle}>В списках у людей</div>
-                            {manga.rates_statuses_stats.map((el) => (
+                            {anime.rates_statuses_stats.map((el) => (
                                 <div>{el.name}: <span>{el.value}</span> </div>
                             ))}
                         </div>
@@ -75,7 +79,7 @@ export const MangaPreview: FC<IProps> = ({ manga }) => {
                 </div>
             </div>
             <div className={classes}>
-                {manga.description}
+                {anime.description}
             </div>
             {isShow
                 ? <MyButton clickHandler={changeHandler} className={styles.button}>Свернуть</MyButton>

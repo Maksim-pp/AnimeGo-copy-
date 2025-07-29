@@ -4,11 +4,12 @@ import { IMangaRoles } from 'shared/types/mangaRolesType'
 import styles from './Role.module.scss'
 import { NavLink } from 'react-router-dom'
 import { Routes } from 'shared/constants'
+import { IAnimeRoles } from 'shared/types/animeRolesType'
 
 //добавить типы к ролям в аниме через аператор "|"
 
 interface IProps {
-    Role?: IMangaRoles[]
+    Role?: IMangaRoles[] | IAnimeRoles[]
 }
 
 export const Role: FC<IProps> = ({ Role }) => {

@@ -55,7 +55,7 @@ export const Slider: FC = () => {
                 {
                     animeSeason.map(el => (
                         <SwiperSlide>
-                            <SlidePreview key={el.id} img={el.image.original} score={el.score} title={el.name}/>
+                            <SlidePreview key={el.id} id={el.id} img={el.image.original} score={el.score} title={el.name}/>
                         </SwiperSlide>
                     ))
                 }

@@ -2,20 +2,22 @@ import { FC } from 'react'
 
 import styles from './Similar.module.scss'
 import { IMangaSimilar } from 'shared/types/mangaSimilarTypes'
+import { IAnimeSimilar } from 'shared/types/animeSimilarType'
 
-// добавить типы  с оператором или '|'
 
 interface IProps {
-    similar: IMangaSimilar[]
+    similar?: IMangaSimilar[] | IAnimeSimilar[];
 }
 
 export const Similar: FC<IProps> = ({ similar }) => {
+    console.log(similar);
+    
     return (
         <div className={styles.similar}>
             <h2 className={styles.similar__title}>Схожее</h2>
             <div className={styles.similar__list}>
                 {
-                    similar.map((el) => (
+                    similar?.map((el) => (
                         <div key={el.id}>
                             <img src={`https://shikimori.one/${el.image.preview}`} alt="" />
                             <div>
